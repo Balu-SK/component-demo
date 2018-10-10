@@ -1,0 +1,14 @@
+<div class="parent-container">
+  <h2>Heroes</h2>
+
+  <app-search [heroes]="allHeroes" (onFilter)="updateResult($event)"></app-search>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/hero/{{hero.id}}"> 
+        <span class="badge">{{hero.id}}</span> 
+        {{hero.name}}
+      </a>
+      <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
+    </li>
+  </ul>
+</div>
