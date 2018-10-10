@@ -28,11 +28,10 @@ export class ParentComponent implements OnInit {
 
   delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
-    this.heroService.deleteHero(hero).subscribe();
+    this.heroService.deleteHero(hero);
   }
 
   updateResult( heroes: Hero[] ){
-    console.log("log")
     if( heroes.length ){
       this.heroes = heroes;
     }

@@ -18,8 +18,7 @@ describe('ParentComponent', () => {
 
   beforeEach(async(() => {
 
-
-    heroService = jasmine.createSpyObj('HeroService', ['getHeroes', 'getHero']);
+    heroService = jasmine.createSpyObj('HeroService', ['getHeroes', 'getHero', 'deleteHero']);
     getHeroesSpy = heroService.getHeroes.and.returnValue( of(HEROES) );
 
     TestBed.configureTestingModule({
@@ -39,4 +38,20 @@ describe('ParentComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should contain 10 heroes - ON INIT', () => {
+    component.getHeroes();
+    expect( component.allHeroes.length ).toEqual(10);
+  });
+
+  it('should filter first 3 heroes - ON SEARCH', () => {
+    component.updateResult( component.allHeroes.slice(0,3));
+    expect( component.heroes.length ).toEqual(3);
+  });
+
+  it('should delete Mr.Nice list - ON DELETE', () => {
+    component.delete( component.heroes[0] );
+    expect( component.heroes[0].name ).toEqual("Narco");
+  });
+
 });

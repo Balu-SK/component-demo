@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import {APP_BASE_HREF} from '@angular/common';
 
@@ -37,7 +37,7 @@ describe('HeroDetailComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', fakeAsync(() => {
-    expect(component).toBeTruthy();
-  }));
+  // it('should create', () => {
+  //   expect(component).toBeTruthy();
+  // });
 });
