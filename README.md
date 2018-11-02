@@ -1,5 +1,7 @@
 # ComponentDemo
 
+This is a simple boiler-plate project for the workshop of internal purpose.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
 
 ## Development server
